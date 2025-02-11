@@ -5,7 +5,7 @@ Funcionamento:
 
 - Para testes automatizados: executar o comando:
     
-    python test_bichinho.py
+    "python test_bichinho.py"
 
     Comando executa 9 testes automatizados:
     - Teste de criacao do bichinho Virtual
@@ -17,7 +17,7 @@ Funcionamento:
 
 - Para execucao do programa em si, executar o comando:
 
-    python main.py
+    "python main.py"
 
 Como funciona o programa:
 
