@@ -85,7 +85,7 @@ class TesteBichinho(unittest.TestCase):
     def test_limite_descanso_bichinho(self):
         # Inicializa o bichinho
         bichinhoTeste = bichinho.BichinhoVirtual('Pedro')
-        result = bichinhoTeste.toggleBichinhoDescansando()
+        bichinhoTeste.toggleBichinhoDescansando()
 
         # Faz o bichinho descansar 11 vezes, o que daria um resultado de 110:
         bichinhoTeste.passaTimer()
@@ -100,6 +100,32 @@ class TesteBichinho(unittest.TestCase):
         bichinhoTeste.passaTimer()
         bichinhoTeste.passaTimer()
         self.assertEqual(bichinhoTeste.energiaBichinho, 100)
+
+    
+    # Testa a alimentacao do bichinho como se comporta na aplicacao:
+    def test_alimentacao_aplicacao(self):
+        bichinhoTeste = bichinho.BichinhoVirtual('Pedro')
+        bichinhoTeste.alimentaBichinho(25)
+        bichinhoTeste.passaTimer()
+        bichinhoTeste.alimentaBichinho(25)
+        self.assertEqual(bichinhoTeste.alimentacaoBichinho, 40)
+
+
+    # Testa a limpeza do bichinho como se comporta na aplicacao:
+    def test_limpa_bichinho_aplicacao(self):
+        bichinhoTeste = bichinho.BichinhoVirtual('Pedro')
+        bichinhoTeste.passaTimer()
+        bichinhoTeste.limpaBichinho(100)
+        self.assertEqual(bichinhoTeste, 100)
+
+
+    # Testa a limpeza do bichinho como se comporta na aplicacao:
+    def test_brinca_bichinho_aplicacao(self):
+        bichinhoTeste = bichinho.BichinhoVirtual('Pedro')
+        bichinhoTeste.brincaBichinho(50)
+        bichinhoTeste.passaTimer()
+        self.assertEqual(bichinhoTeste, 45)
+
     
 
 if __name__ == '__main__':
