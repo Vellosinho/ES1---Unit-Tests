@@ -7,7 +7,7 @@ Funcionamento:
     
     "python test_bichinho.py"
 
-    Comando executa 9 testes automatizados:
+    Comando executa 12 testes automatizados:
     - Teste de criacao do bichinho Virtual
     - Teste de alimentacao
     - Teste de limpeza
