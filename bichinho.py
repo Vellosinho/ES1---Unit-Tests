@@ -1,6 +1,8 @@
 # O codigo abaixo propoe o funcionamento de um bichinho virtual.
 
 # A classe definida abaixo e a classe do proprio bichinho, que e criada com os atributos alimentacao, higiene, diversao, e energia, alem de uma booleana que controla se o bichinho esta ou nao descansandn
+
+import brinquedo
 class BichinhoVirtual:
     nomeBichinho = ''
     alimentacaoBichinho = 0
@@ -8,6 +10,7 @@ class BichinhoVirtual:
     diversaoBichinho = 0
     energiaBichinho = 0
     bichinhoDescansando = False
+    brinquedoBichinho = brinquedo.Brinquedo('Nenhum', 0, 0, True)
 
     def __init__(self, nome):
         self.nomeBichinho = nome
@@ -21,6 +24,12 @@ class BichinhoVirtual:
             self.alimentacaoBichinho = 100
 
         return self
+    
+    def alimentaComidaBichinho(self, comida):
+        self.alimentaBichinho(comida.valorNutricional)
+
+    def daBrinquedoBichinho(self, brinquedo):
+        self.brinquedoBichinho = brinquedo
     
     def limpaBichinho(self, x):
         # essa funcao limpa o bichinho, ou seja, recebe um valor x que vai ser somado a higiene. Quando a higiene vale zero, o bichinho esta muito sujo e deve ser limpado
@@ -65,9 +74,13 @@ class BichinhoVirtual:
         self.higieneBichinho -= 5
         if (self.higieneBichinho < 0):
             self.higieneBichinho = 0
-        self.diversaoBichinho -= 5
-        if (self.diversaoBichinho < 0):
-            self.diversaoBichinho = 0
+        if (self.brinquedoBichinho.brinquedoQuebrado == True) :
+            self.diversaoBichinho -= 5
+            if (self.diversaoBichinho < 0):
+                self.diversaoBichinho = 0
+        else:
+            self.brincaBichinho(self.brinquedoBichinho.diversaoBrinquedo)
+            self.brinquedoBichinho.reduzDurabilidade()
 
         return self
     
