@@ -5,7 +5,7 @@ Funcionamento:
 
 - Para testes automatizados: executar o comando:
     
-    "python test_file.py"
+    "python test_script.py"
 
     Comando executa 20 testes automatizados:
     - Teste de criacao do bichinho Virtual
